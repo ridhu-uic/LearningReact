@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3.js Logarithmic Scale Example</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+        <style>
+           svg {
+              border: 1px solid gray;
+           }
+        </style>
+     </head>
+<body>
+   <svg width="600" height="300" id="chart"></svg>
+   <script>
+// Create a logarithmic scale
+var logScale = d3.scaleLog()
+   .domain([1, 1000]) // Input domain (data values)
+   .range([0, 500]);  // Output range (visual values)
+
+// Create SVG container
+var svg = d3.select("#chart");
+
+// Append a rectangle to visualize the scale
+svg.append("rect")
+   .attr("x", 50)
+   .attr("y", 100)
+   .attr("width", logScale(10)) // Use the scale to set the width
+   .attr("height", 50)
+   .style("fill", "blue");
+
+console.log("log 10",logScale(10))
+
+
+   </script>
+</body>
+</html>

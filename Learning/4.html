@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+      <style>
+         rect {
+            fill: blue;
+         }
+      </style>
+   </head>
+
+   <body>
+      <svg width="200" height="200">
+         <rect id="toggleRect" x="50" y="50" width="100" height="100"></rect>
+      </svg>
+
+      <button onclick="toggleRect()">Toggle Rectangle</button>
+
+      <script>
+         var isVisible = true;
+
+         function toggleRect() {
+            isVisible = !isVisible; // Toggle the visibility state
+            d3.select("#toggleRect")
+               .style("display", isVisible ? "block" : "none"); // Toggle the display property
+         }
+      </script>
+   </body>
+</html>
